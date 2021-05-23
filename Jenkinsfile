@@ -21,6 +21,12 @@ pipeline {
                 }
             }
         }
+        stage('test backend') {
+            steps {
+                echo 'checking gradle..'                
+                }
+            }
+        }
 
         stage('build') {
             steps {
