@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo 'executing gradle...'
                 withGradle {
-                    sh '/var/lib/docker/volumes/jenkins_home/_data/plugins/gradle gradlew -v'                
+                    sh './gradlew -v'                
                 }
             }
         }
