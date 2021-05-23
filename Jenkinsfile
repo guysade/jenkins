@@ -1,11 +1,8 @@
 pipeline {
-    
     agent any
-  
+
     stages {
-        
-        stage("run frontend") {
-        
+        stage('run frontend') {
             steps {
                 echo 'executing yarn...'
                 nodejs('Node-10.17') {
@@ -13,36 +10,32 @@ pipeline {
                 }
             }
         }
-        
-        stage("run backend") {
-        
+
+        stage('run backend') {
             steps {
                 echo 'executing gradle...'
-                withGradle() {
+                withGradle {
                     sh './gradlew -v'
                 }
             }
         }
-    
-        stage("build") {
-        
+
+        stage('build') {
             steps {
                 echo 'building the app...'
             }
         }
-        
-        stage("test") {
-        
+
+        stage('test') {
             steps {
                 echo 'testing the app...'
             }
         }
-        
-        stage("deploy") {
-        
+
+        stage('deploy') {
             steps {
                 echo 'building the app...'
             }
-        }        
+        }
     }
 }
