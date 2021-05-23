@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo 'executing gradle...'
                 withGradle {
-                    sh 'gradlew clean assembleRelease'                
+                    sh 'mkdir test'                
                 }
             }
         }
